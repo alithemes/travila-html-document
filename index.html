@@ -6,23 +6,28 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 <head>
+    <!-- Color modes -->
+    <script src="assets/js/vendor/color-modes.js"></script>
     <!-- Basic metas
     ======================================== -->
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
     <!-- Page Title
     ======================================== -->
     <title>Travila - Modern Travel & Tour Booking HTML Template | Documentation</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=roboto:400,500,700" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <!-- Syntax Highlighter -->
     <link rel="stylesheet" type="text/css" href="assets/syntax-highlighter/styles/shCore.css" media="all">
     <link rel="stylesheet" type="text/css" href="assets/syntax-highlighter/styles/shThemeDefault.css" media="all">
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/vendor/fontawesome-all.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/vendor/boxicons.min.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendor/perfect-scrollbar.css">
     <!-- Custom css -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
@@ -36,13 +41,44 @@
     <header class="page-header sticky-top" id="top">
         <div class="container-fluid">
             <nav class="page-nav">
-                <a href="https://themeforest.net/user/alithemes/portfolio" class="nav-brand">
-                    <img src="assets/images/logo-alithemes.svg" alt="alithemes" />
+                <a href="https://alithemes.com" class="nav-brand d-flex">                   
+                    <img src="assets/images/ali-logo.svg" alt="logo">
+                    <img src="assets/images/ali-text.svg" alt="logo" class="color-inverse ms-1">
                 </a>
-                <div class="nav-list">
-                    <a href="https://travila.netlify.app/" target="_blank">Live Demo</a>
-                    <a href="https://themeforest.net/user/alithemes/portfolio" target="_blank">Portfolio</a>
-                    <a href="#" class="toggle-navbar"><i class="far fa-bars"></i></a>
+                <div class="d-flex align-items-center">
+                    <div class="nav-list me-5">
+                        <a href="https://travila.netlify.app/" target="_blank"><i class="fas fa-external-link-alt me-2"></i>Frontend Demo</a>
+                        <a href="https://travila-dashboard-html.netlify.app/" target="_blank"><i class="fas fa-external-link-alt me-2"></i>Dashboard Demo</a>
+                        <a href="https://alithemes.ticksy.com/" target="_blank"><i class="far fa-life-ring me-2"></i>Support</a>
+                        <a href="https://themeforest.net/user/alithemes/portfolio/" target="_blank"><i class="fas fa-th me-2"></i>Portfolio</a>
+                        <a href="#" class="toggle-navbar"><i class="fas fa-bars"></i></a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                            <i class="fas fa-adjust fs-4 color-primary"></i>
+                            <span class="visually-hidden bs-theme-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center fs-4" data-bs-theme-value="light" aria-pressed="false">
+                                <i class="fas fa-sun"></i>
+                                <span class="ms-2">Light</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center fs-4" data-bs-theme-value="dark" aria-pressed="false">
+                                <i class="fas fa-moon"></i>
+                                <span class="ms-2">Dark</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center active  fs-4" data-bs-theme-value="auto" aria-pressed="true">
+                                <i class="fas fa-adjust"></i>
+                                <span class="ms-2">Auto</span>
+                            </button>
+                        </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- End of .nav-list -->
             </nav>
@@ -54,9 +90,9 @@
     <div class="main-content-wrapper">
         <div class="container-fluid">
             <div class="main-content p-t-40">
-                <aside class="sidebar-navigation sticky-top">
+                <aside class="sidebar-navigation sticky-top rounded">
                     <nav class="nav">
-                        <h4>TABLE OF CONTENT</h4>
+                        <h4 class="mb-3">Table of Content</h4>
                         <form action="#" class="search-form m-b-20">
                             <div class="input-group">
                                 <input type="text" class="search-input" placeholder="Search item">
@@ -78,6 +114,7 @@
                                     <li><a href="#js-structure">JS Structure</a></li>
                                 </ol>
                             </li>
+                            <li><a class="nav-link" href="#development">DEVELOPMENT</a></li>
                             <li><a class="nav-link" href="#update">UPDATE</a></li>
                             <li><a class="nav-link" href="#credits">SOURCES & CREDITS</a></li>
                             <li><a class="nav-link" href="#thanks">THANK YOU</a></li>
@@ -89,16 +126,17 @@
                         <section>
                             <p>
                                 <a href="#" target="_blank">
-                                    <img src="assets/images/logo-white.svg" alt="alithemes" />
+                                    <img class="logo-light" src="assets/images/logo-light.svg" alt="">
+                                    <img class="logo-dark" src="assets/images/logo-dark.svg" alt="">
                                 </a>
                             </p>
                             <h4>Travila - Modern Travel & Tour Booking HTML Template</h4>
                             <h3 class="mb-5"></h3>
                             <h4 class="mt-0">DOCUMENTATION</h4>
                             <ul class="text-small doc-infor">
-                                <li>Doc version: 1.0.0</li>
+                                <li>Doc version: 2.0.0</li>
                                 <li>Created: 15 April 2024</li>
-                                <li>Last update: 15 April 2024</li>
+                                <li>Last update: 15 May 2024</li>
                             </ul>
                             <h3 class="mb-5"></h3>
                         </section>
@@ -127,10 +165,12 @@
                             </ul>
                             <h3 id="what-you-get">What You Get</h3>
                             <ol>
-                                <li>HTML Template (built from Gulp)</li>
-                                <li>HTML Development source code</li>
-                                <li>Figma design file</li>
-                                <li>Documentation</li>
+                                <li>HTML Frontend Template (built from Gulp)</li>
+                                <li>HTML Frontend Development source code</li>
+                                <li>HTML Dashboard Template (built from Gulp)</li>
+                                <li>HTML Dashboard Development source code</li>
+                                <li><a href="https://graphicriver.net/item/travila-modern-travel-tour-booking-figma-template/51234875">Figma design file</a></li>
+                                <li><a href="https://travila-html-doc.netlify.app/">Documentation</a></li>
                             </ol>
                             <h3>Note</h3>
                             <p class="alert alert-warning">- All images are just used for Preview Purpose Only. They are not part of the template and maybe NOT included in the final purchase files. <br>
@@ -138,6 +178,8 @@
                             </p>
                             <h3 id="change-log">Change log</h3>
                                 <pre class="brush: html">
+                                    VERSION 2.0
+                                    - Add Dashboard Template
                                     VERSION 1.0
                                     - First release.
                                  </pre>
@@ -203,7 +245,7 @@
                                 </ul>
                             </div>
                             <h3 id="html-structure">HTML Structure</h3>
-                            <p>All information within the main content area is <strong>Travila</strong>ed within a body tag. The general template structure is pretty the same throughout the template. Here is the general structure of main page (index.html).</p>
+                            <p>All information in the main content area is placed in the body tag. The general sample structure is quite similar throughout the sample. This is the general structure of the main page (index.html).</p>
                             <pre class="brush: html">
                                 <!--
                                 <body>
@@ -288,6 +330,37 @@
                                     <script src="assets/js/main.js?v=1.0.0"></script>
                                 -->
                             </pre>
+                            <h2 id="development">DEVELOPMENT</h2>
+                            <P>Learn how to included npm scripts to automate your time-consuming tasks in your development workflow with Gulp toolkit.</P>
+                            <h4>Quick Start</h4>
+                            <p>Travila uses <a href="https://docs.npmjs.com/misc/scripts" target="_blank">NPM scripts </a> for its build system. Our <code class="highlighter-rouge">package.json</code> includes convenient methods for working with the framework, including compiling code, running tests, and more.</p>
+                            <p>To use our build system and run our documentation locally, you'll need a copy of Travila's development source files and NodeJS. Follow these steps and you should be ready to rock:</p>
+                            <ol>
+                                <li><a href="https://nodejs.org/en/" target="_blank">Download and install Node.js </a>, which we
+                                    use to manage our dependencies.</li>
+                                <li><a href="https://gulpjs.com/docs/en/getting-started/quick-start" target="_blank">Download and
+                                    install Gulp.js </a>, which we use to manage our dependencies.</li>
+                                <li>Navigate to the root <code class="highlighter-rouge">/Travila</code> directory and run <code class="highlighter-rouge">npm install</code> to install our local dependencies listed in <code class="highlighter-rouge">package.json</code>.</li>
+                            </ol>
+                            <p>When completed, you'll be able to run the various commands provided from the command line.</p>
+                            <h4>Installing NPM modules </h4>
+                            <p>First, change the command line path into your project where Travila folder is located. if you have not done this before, you may check the following article to quick start, you may run <code class="highlighter-rouge">package.json</code> file by using the following command:</p>
+                            <pre class="brush: html">
+                                npm install
+                            </pre>
+                            <p>If you check the project folder when the command has finished executing, you should see that Gulp has created a <code class="highlighter-rouge">node_modules</code> folder.</p>
+                            <h4>Run Gulp</h4>
+                            <p>Compile and watch the <code class="highlighter-rouge">PUG/SCSS/JS/HTML</code>, use Live Reload to update browsers instantly, start a server, and pop a tab in your default browser. Any changes made to the source files will be compiled as soon as you save the file. To try it out run:</p>
+                            <p>First, run this command</p>
+                            <pre class="brush: html">
+                                npm run build
+                            </pre>
+                            <p>After a few seconds, a folder called <code class="highlighter-rouge">dist</code> is created, which is the HTML files you use to run the website.</p>
+                            <h4>Start Server:</h4>
+                            <pre class="brush: html">
+                                npm run dev
+                            </pre>
+                            <p>The website will open in your browser at: <code class="highlighter-rouge">http://localhost:3000</code></p>
                             <h2 id="update">UPDATE</h2>
                             <h3>Important Note:</h3>
                             <p>- Backup <strong>your website</strong> and <strong>template folders</strong> completely to make sure you have a restore point in case of any complications.</p>
@@ -310,7 +383,6 @@
                             <p>Thank you so much for using this template.
                             <p><strong> - AliThemes Team - </strong></p>
                         </section>
-                        <!-- End of #section-10 -->
                     </div>
                     <!-- End of .filterable-wrapper -->
                 </main>
@@ -322,7 +394,7 @@
     <!-- End of .main-content -->
     <footer class="page-footer">
         <div class="container-fluid text-center">
-            <p>&copy; 2024, <strong class="text-brand"><strong>Travila</strong></strong> - Modern Travel & Tour Booking HTML Template</p>
+            <p>&copy; 2024, <strong class="text-brand">Travila</strong> - Modern Travel & Tour Booking HTML Template</p>
         </div>
         <!-- End of .page-footer -->
     </footer>
